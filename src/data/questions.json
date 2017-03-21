@@ -1,0 +1,92 @@
+[
+  {
+	"name": "rule-1",
+	"variants": [
+	  {
+		"value": "true",
+		"label": "label: true"
+	  },
+	  {
+		"value": "false",
+		"label": "label: false"
+	  }
+	]
+  },
+  {
+	"name": "rule-2",
+	"variants": [
+	  {
+		"value": "yes",
+		"label": "label: yes"
+	  },
+	  {
+		"value": "no",
+		"label": "label: no"
+	  },
+	  {
+		"value": "what",
+		"label": "label: what"
+	  }
+	]
+  },
+  {
+	"name": "rule-3",
+	"variants": [
+	  {
+		"value": "true",
+		"label": "label: true"
+	  },
+	  {
+		"value": "false",
+		"label": "label: false"
+	  }
+	]
+  },
+  {
+	"name": "rule-4",
+	"variants": [
+	  {
+		"value": "yes",
+		"label": "label: yes"
+	  },
+	  {
+		"value": "no",
+		"label": "label: no"
+	  },
+	  {
+		"value": "what",
+		"label": "label: what"
+	  }
+	]
+  },
+  {
+	"name": "rule-5",
+	"variants": [
+	  {
+		"value": "true",
+		"label": "label: true"
+	  },
+	  {
+		"value": "false",
+		"label": "label: false"
+	  }
+	]
+  },
+  {
+	"name": "rule-6",
+	"variants": [
+	  {
+		"value": "yes",
+		"label": "label: yes"
+	  },
+	  {
+		"value": "no",
+		"label": "label: no"
+	  },
+	  {
+		"value": "what",
+		"label": "label: what"
+	  }
+	]
+  }
+]
