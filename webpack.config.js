@@ -102,6 +102,10 @@ const config = {
                 })
             },
             {
+                test: /\.css$/,
+                use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })
+            },
+            {
                 test: /.*\.(gif|png|jpe?g|svg)$/i,
                 use: [
                     'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',

@@ -5,6 +5,8 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
+import 'highlight.js/styles/darcula.css';
 import '../common/global.pcss';
 import s from './main.pcss';
 
@@ -28,17 +30,16 @@ class Main extends Component {
 
         if (question <= length) {
             const currentQuestionData = questions[question];
-            const name = currentQuestionData.name;
+            const name = currentQuestionData.id;
 
-            return currentQuestionData.variants.map(item => {
-                const key = `${name}_${item.label}`;
-                return (
+            return currentQuestionData.variants.map(item => (
+                <div className={s.button} key={`${name}_${item.value}`}>
                     <Button
-                        key={key}
-                        onClick={this.handleButtonClick.bind(this, name, item.value)}
-                    >{item.label}</Button>
-                )
-            });
+                        hint={item.hint}
+                        code={item.code}
+                        onClick={this.handleButtonClick.bind(this, name, item.value)}/>
+                </div>
+            ));
         }
 
         return null;
@@ -56,7 +57,9 @@ class Main extends Component {
                         <h1 className={s.title}>Build your own config</h1>
                         <p>Choose the code sample you like more:</p>
 
-                        {this.renderButtons()}
+                        <div className={s.buttons}>
+                            {this.renderButtons()}
+                        </div>
                     </div>
                 </div>
             </div>

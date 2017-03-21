@@ -1,91 +1,51 @@
 [
   {
-	"name": "rule-1",
+	"id": "remove-empty-rulesets",
 	"variants": [
 	  {
+		"hint": "Remove empty rulesets",
 		"value": "true",
-		"label": "label: true"
+		"code": ".a {\n    color: tomato;\n}\n<mark> </mark>"
 	  },
 	  {
-		"value": "false",
-		"label": "label: false"
+		"hint": "Leave code untouched",
+		"value": "null",
+		"code": ".a {\n    color: tomato;\n}\n.b{}"
 	  }
 	]
   },
   {
-	"name": "rule-2",
+	"id": "always-semicolon",
 	"variants": [
 	  {
-		"value": "yes",
-		"label": "label: yes"
-	  },
-	  {
-		"value": "no",
-		"label": "label: no"
-	  },
-	  {
-		"value": "what",
-		"label": "label: what"
-	  }
-	]
-  },
-  {
-	"name": "rule-3",
-	"variants": [
-	  {
+		"hint": "Add missing semicolons",
 		"value": "true",
-		"label": "label: true"
+		"code": ".a {\n    color: tomato<mark>;</mark>\n}"
 	  },
 	  {
-		"value": "false",
-		"label": "label: false"
+		"hint": "Leave code untouched",
+		"value": "null",
+		"code": ".a {\n    color: tomato\n}"
 	  }
 	]
   },
   {
-	"name": "rule-4",
+	"id": "color-case",
 	"variants": [
 	  {
-		"value": "yes",
-		"label": "label: yes"
+		"hint": "Set colors to lowercase",
+		"value": "lower",
+		"code": ".a {\n    color: <mark>#fff</mark>;\n    background-color: <mark>#aaa</mark>;\n}"
 	  },
 	  {
-		"value": "no",
-		"label": "label: no"
+		"hint": "Set colors to uppercase",
+		"value": "upper",
+		"code": ".a {\n    color: <mark>#FFF</mark>;\n    background-color: <mark>#AAA</mark>;\n}"
 	  },
 	  {
-		"value": "what",
-		"label": "label: what"
-	  }
-	]
-  },
-  {
-	"name": "rule-5",
-	"variants": [
-	  {
-		"value": "true",
-		"label": "label: true"
-	  },
-	  {
-		"value": "false",
-		"label": "label: false"
-	  }
-	]
-  },
-  {
-	"name": "rule-6",
-	"variants": [
-	  {
-		"value": "yes",
-		"label": "label: yes"
-	  },
-	  {
-		"value": "no",
-		"label": "label: no"
-	  },
-	  {
-		"value": "what",
-		"label": "label: what"
+		"hint": "Leave code untouched",
+		"value": "null",
+		"code": ".a {\n    color: #fff;\n    background-color: #AAA;\n}"
 	  }
 	]
   }

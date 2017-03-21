@@ -4,6 +4,7 @@
  */
 
 import React from 'react';
+import Highlight from 'react-highlight';
 import s from './Config.pcss';
 
 const Config = props => {
@@ -16,7 +17,11 @@ const Config = props => {
     const brackets = `{\n${string}\n}`;
 
     return (
-        <textarea disabled className={s.textarea} value={brackets}/>
+        <div className={s.config}>
+            <Highlight className='JSON'>
+                {brackets}
+            </Highlight>
+        </div>
     )
 };
 

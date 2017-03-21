@@ -4,9 +4,16 @@
  */
 
 import React from 'react';
+import Highlight from 'react-highlight';
+import s from './Button.pcss';
 
 const Button = props => (
-    <button type='button' onClick={props.onClick}>{props.children}</button>
+    <div onClick={props.onClick} className={s.button}>
+        <Highlight className='css'>
+            <div>{'/* '}{props.hint}{' */'}</div>
+            <div dangerouslySetInnerHTML={{ __html: props.code }}/>
+        </Highlight>
+    </div>
 );
 
 export default Button;
