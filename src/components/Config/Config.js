@@ -11,7 +11,7 @@ const Config = props => {
     const string = props.config.reduce((acc, rule, index, array) => {
         const isLastRow = array.length - 1 === index;
         const isFirstRow = index === 0;
-        return `${acc}${isFirstRow ? '' : '\n'}\t"${rule.name}": ${rule.value}${isLastRow ? '' : ','}`;
+        return `${acc}${isFirstRow ? '' : '\n'}    "${rule.name}": ${rule.value}${isLastRow ? '' : ','}`;
     }, '');
 
     const brackets = `{\n${string}\n}`;

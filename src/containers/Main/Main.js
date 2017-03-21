@@ -10,6 +10,8 @@ import 'highlight.js/styles/darcula.css';
 import '../common/global.pcss';
 import s from './main.pcss';
 
+import { Layout, Content, Sidebar } from '../../components/Layout/Layout';
+import Header from '../../components/Header/Header';
 import Config from '../../components/Config/Config';
 import Button from '../../components/Button/Button';
 
@@ -46,13 +48,16 @@ class Main extends Component {
     }
 
     render() {
+        const { config } = this.props;
+
         return (
             <div>
-                <div className={s.container}>
-                    <div className={s.config}>
-                        <Config config={this.props.config}/>
-                    </div>
-
+                <Header/>
+            <Layout>
+                <Sidebar>
+                    <Config config={config}/>
+                </Sidebar>
+                <Content>
                     <div className={s.questions}>
                         <h1 className={s.title}>Build your own config</h1>
                         <p>Choose the code sample you like more:</p>
@@ -61,7 +66,8 @@ class Main extends Component {
                             {this.renderButtons()}
                         </div>
                     </div>
-                </div>
+                </Content>
+            </Layout>
             </div>
         )
     }
