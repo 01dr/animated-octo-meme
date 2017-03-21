@@ -1,51 +1,71 @@
 [
   {
-	"id": "remove-empty-rulesets",
+	"id": "color-hex-case",
 	"variants": [
 	  {
-		"hint": "Remove empty rulesets",
-		"value": "true",
-		"code": ".a {\n    color: tomato;\n}\n<mark> </mark>"
-	  },
-	  {
-		"hint": "Leave code untouched",
-		"value": "null",
-		"code": ".a {\n    color: tomato;\n}\n.b{}"
-	  }
-	]
-  },
-  {
-	"id": "always-semicolon",
-	"variants": [
-	  {
-		"hint": "Add missing semicolons",
-		"value": "true",
-		"code": ".a {\n    color: tomato<mark>;</mark>\n}"
-	  },
-	  {
-		"hint": "Leave code untouched",
-		"value": "null",
-		"code": ".a {\n    color: tomato\n}"
-	  }
-	]
-  },
-  {
-	"id": "color-case",
-	"variants": [
-	  {
-		"hint": "Set colors to lowercase",
+		"hint": "Specify lowercase for hex colors",
 		"value": "lower",
-		"code": ".a {\n    color: <mark>#fff</mark>;\n    background-color: <mark>#aaa</mark>;\n}"
+		"code": ".a {\n  color: <mark>#fff</mark>;\n}"
 	  },
 	  {
-		"hint": "Set colors to uppercase",
+		"hint": "Specify uppercase for hex colors",
 		"value": "upper",
-		"code": ".a {\n    color: <mark>#FFF</mark>;\n    background-color: <mark>#AAA</mark>;\n}"
+		"code": ".a {\n  color: <mark>#FFF</mark>;\n}"
+	  }
+	]
+  },
+  {
+	"id": "color-hex-length",
+	"variants": [
+	  {
+		"hint": "Specify short notation for hex colors",
+		"value": "short",
+		"code": ".a {\n  color: <mark>#fff</mark>;\n}"
 	  },
 	  {
-		"hint": "Leave code untouched",
+		"hint": "Specify long notation for hex colors",
+		"value": "long",
+		"code": ".a {\n  color: <mark>#ffffff</mark>;\n}"
+	  }
+	]
+  },
+  {
+	"id": "color-no-invalid-hex",
+	"variants": [
+	  {
+		"hint": "Disallow invalid hex colors",
+		"value": "true",
+		"code": ".a {\n  color: <mark>#fff</mark>;\n}"
+	  },
+	  {
+		"hint": "Allow invalid hex colors",
 		"value": "null",
-		"code": ".a {\n    color: #fff;\n    background-color: #AAA;\n}"
+		"code": ".a {\n  color: <mark>#foobar</mark>;\n}"
+	  }
+	]
+  },
+  {
+	"id": "comment-empty-line-before",
+	"variants": [
+	  {
+		"hint": "Require an empty line before comments",
+		"value": "always",
+		"code": ".a {}\n<mark> </mark>\n/* comment */"
+	  },
+	  {
+		"hint": "Disallow an empty line before comments",
+		"value": "never",
+		"code": ".a {}\n/* comment */\n "
+	  }
+	]
+  },
+  {
+	"id": "comment-no-empty",
+	"variants": [
+	  {
+		"hint": "Disallow empty comments",
+		"value": "true",
+		"code": "/*<mark> </mark>*/"
 	  }
 	]
   }
