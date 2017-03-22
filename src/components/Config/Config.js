@@ -14,7 +14,7 @@ const Config = props => {
         return `${acc}${isFirstRow ? '' : '\n'}    "${rule.name}": "${rule.value}"${isLastRow ? '' : ','}`;
     }, '');
 
-    const brackets = `{\n${string}\n}`;
+    const brackets = `{\n  "extends": "stylelint-config-standard",\n  "rules": {\n${string}\n  }\n}`;
 
     return (
         <div className={s.config}>

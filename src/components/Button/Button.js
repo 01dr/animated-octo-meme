@@ -11,7 +11,7 @@ const Button = props => (
     <div onClick={props.onClick} className={s.button}>
         <Highlight className='css'>
             <div>{'/* '}{props.hint}{' */'}</div>
-            <div dangerouslySetInnerHTML={{ __html: props.code }}/>
+            {props.code && <div dangerouslySetInnerHTML={{ __html: props.code }}/>}
         </Highlight>
     </div>
 );

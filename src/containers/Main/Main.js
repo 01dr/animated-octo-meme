@@ -26,6 +26,10 @@ class Main extends Component {
         dispatch(nextQuestion());
     }
 
+    handleSkipButtonClick() {
+        this.props.dispatch(nextQuestion());
+    }
+
     renderButtons() {
         const { question } = this.props;
         const length = questions.length - 1;
@@ -42,6 +46,17 @@ class Main extends Component {
                         onClick={this.handleButtonClick.bind(this, name, item.value)}/>
                 </div>
             ));
+        }
+
+        return null;
+    }
+
+    renderSkipButton() {
+        const { question } = this.props;
+        const length = questions.length - 1;
+
+        if (question <= length) {
+            return <button className={s.skip} onClick={::this.handleSkipButtonClick}>Skip that rule</button>;
         }
 
         return null;
@@ -64,6 +79,7 @@ class Main extends Component {
 
                         <div className={s.buttons}>
                             {this.renderButtons()}
+                            {this.renderSkipButton()}
                         </div>
                     </div>
                 </Content>
